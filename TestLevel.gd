@@ -1,17 +1,18 @@
 extends Node2D
 
 export (float) var CAMERA_ZOOM = .4
+onready var map = $TestLevelMap
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("initializing map...")
-	$TestLevelMap.initialize()
+	map.initialize()
 	
 	print("setting up cameras")
 	
 	#only one cam
 	print("setting up MainCam")
-	ready_camera($Player/MainCam, $TestLevelMap)
+	ready_camera($Player/MainCam, map)
 	$Player/MainCam.current = true
 	print("done with MainCam")
 	
