@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Menus/GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/TestLevel.tmx" type="PackedScene" id=4]
-
+[ext_resource path="res://Assets/Levels/TestLevel.tmx" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Enemies/Spider.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://Extra Scripts/Maps.gd\"
@@ -32,3 +32,10 @@ position = Vector2( 158.048, 105.413 )
 
 [node name="TestLevelMap" parent="." instance=ExtResource( 4 )]
 script = SubResource( 1 )
+
+[node name="Spider" parent="." instance=ExtResource( 5 )]
+position = Vector2( 91.75, 97.3856 )
+[connection signal="damaged" from="Player" to="GUI" method="_on_Player_damaged"]
+[connection signal="death" from="Player" to="GUI" method="_on_Player_death"]
+[connection signal="set_health" from="Player" to="GUI" method="_on_Player_set_health"]
+[connection signal="set_max_health" from="Player" to="GUI" method="_on_Player_set_max_health"]
