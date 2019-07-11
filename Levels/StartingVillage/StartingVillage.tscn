@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://TestLevel.gd" type="Script" id=1]
+[ext_resource path="res://Levels/StartingVillage/StartingVillage.gd" type="Script" id=1]
 [ext_resource path="res://Menus/GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Levels/StartingVillage.tmx" type="PackedScene" id=4]
@@ -16,5 +16,5 @@ position = Vector2( 158.048, 105.413 )
 
 [node name="MainCam" type="Camera2D" parent="Player"]
 
-[node name="StartingVillage" parent="." instance=ExtResource( 4 )]
+[node name="StartingVillageMap" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 5 )
