@@ -1,4 +1,9 @@
-# An Inauspicious Start
+---
+layout: post
+title: An Inauspicious Start
+author: DragonKnightRose
+tags: story enemies the_village
+---
 
 ## Random Generators
 
