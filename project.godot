@@ -71,6 +71,7 @@ action_secondary={
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Player_Projectile"
 2d_physics/layer_4="Enemy_Projectile"
+2d_physics/layer_5="Objects"
 
 [rendering]
 
