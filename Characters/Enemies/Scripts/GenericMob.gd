@@ -1,11 +1,9 @@
-extends KinematicBody2D
+extends Character
 
-const FACINGS = {UP = "up", DOWN = "down", LEFT = "left", RIGHT = "right"}
 const SPRITE_SIZE = 16
 
-export (float) var damage = .5
-export var facing = FACINGS.DOWN
-
+export (float) var DAMAGE = .5
+export (int) var MOVEMENT_WAIT = 1
 
 onready var sprite = $Sprite
 onready var los = $LineOfSight
@@ -14,25 +12,15 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
 	
-func look_down():
-	los.rotation_degrees = 0
-	sprite.rotation_degrees = los.rotation_degrees
-	facing = FACINGS.DOWN
+	if moving and !is_stunned:
+		animation_switcher("walk_")
+		process_movement(delta)
+	else:
+		animation_switcher("idle_")
+		
+	process_animation()
 
-func look_up():
-	los.rotation_degrees = 180
-	sprite.rotation_degrees = los.rotation_degrees
-	facing = FACINGS.UP
-	
-func look_left():
-	los.rotation_degrees = 90
-	sprite.rotation_degrees = los.rotation_degrees
-	facing = FACINGS.LEFT
-	
-func look_right():
-	los.rotation_degrees = 270
-	sprite.rotation_degrees = los.rotation_degrees
-	facing = FACINGS.RIGHT
+func _on_StunTimer_timeout():
+	is_stunned = false
