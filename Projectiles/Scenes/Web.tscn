@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Projectiles/Web.gd" type="Script" id=1]
+[ext_resource path="res://Projectiles/Scripts/Web.gd" type="Script" id=1]
 [ext_resource path="res://Assets/colored_transparent.png" type="Texture" id=2]
 
 [node name="Web" type="KinematicBody2D"]

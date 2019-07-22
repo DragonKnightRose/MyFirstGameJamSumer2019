@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Menus/GUI.gd" type="Script" id=1]
-[ext_resource path="res://Assets/GUI/16x/tile_0060.png" type="Texture" id=2]
+[ext_resource path="res://Menus/Scipts/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GUI/Wooden_UI_png/frame_c3_01.png" type="Texture" id=2]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )

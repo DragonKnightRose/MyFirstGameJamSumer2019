@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var MAX_HEARTS = 0
-var HEART = preload("res://Menus/Heart.tscn")
+var HEART = preload("res://Menus/Scenes/Heart.tscn")
 
 onready var heart_bar = $MarginContainer/VBoxContainer/top_line/hearts
 
